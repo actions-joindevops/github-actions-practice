@@ -1,4 +1,4 @@
-name: example-workflow
+name: concurrency
 on: [push]
 concurrency:
   group: ${{ github.ref }}
