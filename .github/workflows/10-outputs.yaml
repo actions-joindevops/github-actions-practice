@@ -1,0 +1,14 @@
+name: actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+      - name: check files
+        id: check-files
+        run: echo "test=world" >> "$GITHUB_OUTPUT"
+    outputs:
+      output1: ${{ steps.checkout.outputs.test }}
+      output2: ${{ steps.check-files.outputs.test }}
