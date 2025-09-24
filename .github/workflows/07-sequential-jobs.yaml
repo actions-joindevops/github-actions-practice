@@ -5,7 +5,11 @@ on:
 jobs:
     my_first_job:
       runs-on: ubuntu-latest
-      name: My first job
+      steps:
+        - name: My first job
+          run: echo "First job"
     my_second_job:
       runs-on: ubuntu-latest
-      name: My second job
+      steps:
+        - name: My second job
+          run: echo "Second job"
