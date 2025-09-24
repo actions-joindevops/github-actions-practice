@@ -7,6 +7,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v5
       - name: check files
+        id: check-files
         run: |
           echo "PWD: $(pwd)"
           echo "Top-level:"
@@ -14,3 +15,6 @@ jobs:
           echo
           echo "One level deep:"
           find . -maxdepth 2 -type f | sort
+    outputs:
+      output1: ${{ steps.checkout.outputs.test }}
+      output2: ${{ steps.check-files.outputs.test }}
