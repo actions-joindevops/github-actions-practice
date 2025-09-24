@@ -7,4 +7,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v5
       - name: check files
-        run: pwd
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Top-level:"
+          ls -la
+          echo
+          echo "One level deep:"
+          find . -maxdepth 2 -type f | sort
