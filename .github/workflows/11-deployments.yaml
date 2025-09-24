@@ -1,0 +1,18 @@
+name: deployment
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    environment: DEV
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+      - name: check files
+        id: check-files
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Top-level:"
+          ls -la
+          echo
+          echo "One level deep:"
+          find . -maxdepth 2 -type f | sort
