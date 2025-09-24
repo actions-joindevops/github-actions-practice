@@ -2,7 +2,7 @@ name: example-workflow
 on: [push]
 concurrency:
   group: ${{ github.ref }}
-  cancel-in-progress: true 
+  cancel-in-progress: true  
 jobs:
   production-deploy:
     if: github.ref == 'refs/heads/main'
