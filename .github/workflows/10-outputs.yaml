@@ -1,7 +1,7 @@
 name: actions
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  outputs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
