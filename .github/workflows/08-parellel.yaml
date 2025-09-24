@@ -1,0 +1,27 @@
+name: Sequential
+on:
+  push:
+    branches: [ main ]
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: My first job
+          run: echo "First job"
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+        - name: My second job
+          run: echo "Second job"
+    job3:
+        runs-on: ubuntu-latest
+        needs: job2
+        steps:
+        - name: My third job
+          run: echo "Third job"
+    job4:
+        runs-on: ubuntu-latest
+        steps:
+        - name: My fourth job
+          run: echo "Fourth job"
